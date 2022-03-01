@@ -14,3 +14,4 @@ sphinx
 mkdocs
 pytest
 pycodestyle
+psycopg2
