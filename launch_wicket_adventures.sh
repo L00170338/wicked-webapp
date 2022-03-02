@@ -16,7 +16,7 @@ echo "SECRET_KEY = 'django-insecure-_^39%)wfp910i*)2!2+ihrxbnrv$&44nm#pv-yf!7&mq
 echo "======= Starting DOC Application  =============="
 
 
-echo "======= Starting DJANGO Application  =============="
+echo "=== Starting DJANGO Application  =============="
 
 source venv/bin/activate && python3.9 manage.py runserver 0.0.0.0:8000
 
