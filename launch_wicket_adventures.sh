@@ -9,7 +9,7 @@ apt install $os_packages -y
 echo "======= Activating venv and installing requirements ============== "
 python3.9 -m venv venv && source venv/bin/activate &&  pip3.9 install -r requirements.txt
 
-echo "======= Exporting key to .env file =============="
+echo "=========== Exporting key to .env file =============="
 
 echo "SECRET_KEY = 'django-insecure-_^39%)wfp910i*)2!2+ihrxbnrv$&44nm#pv-yf!7&mqhbgnkz'" > .env
 
