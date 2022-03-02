@@ -1,7 +1,7 @@
 site_name: WickedPark Docs
-site_url: http://www.wickedpark.com
-site_description: Project documentation with Markdown.
-site_author: Wicked Team
+#site_url: http://www.wickedpark.com
+#site_description: Project documentation with Markdown.
+#site_author: Wicked Team
 
 repo_url: https://github.com/L00170338/wicked-webapp
 edit_uri: ""

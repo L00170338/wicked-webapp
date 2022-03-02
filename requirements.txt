@@ -15,3 +15,7 @@ mkdocs
 pytest
 pycodestyle
 psycopg2
+mdx_gh_links
+mkdocs
+mkdocs-redirects
+mkdocs-material
