@@ -108,7 +108,7 @@ jobs:
         image_cmd: '--image'
         image: 'l00170338/wicked-webapp:main'
         region_cmd: '--region'
-        region: 'eu-west1'
+        region: 'eu-west-1'
         service_name_cmd: '--service-name'
         service_name: 'wicked-webapp-prod-blue-green'
         timeout_cmd: '--timeout'
