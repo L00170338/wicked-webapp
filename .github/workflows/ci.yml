@@ -110,6 +110,6 @@ jobs:
         region_cmd: '--region'
         region: 'eu-west-1'
         service_name_cmd: '--service-name'
-        service_name: 'wicked-webapp-prod-blue-green'
+        service_name: 'wicked-webapp-prod'
         timeout_cmd: '--timeout'
         timeout: '360'
