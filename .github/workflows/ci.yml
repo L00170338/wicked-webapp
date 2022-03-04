@@ -88,7 +88,6 @@ jobs:
       - run: mkdocs gh-deploy --force
 
   deploy_staging_to_ecs:
-    name: 'Deploy updated container image via blue/green deployment to ECS service.'
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-18.04
     needs: [package-job]
@@ -116,7 +115,6 @@ jobs:
 
 
   deploy_production_to_ecs:
-    name: 'Deploy updated container image via blue/green deployment to ECS service.'
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-18.04
     needs: [package-job, deploy_staging_to_ecs]
