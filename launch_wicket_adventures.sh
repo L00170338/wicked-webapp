@@ -13,7 +13,7 @@ echo "=========== Exporting key to .env file =============="
 
 echo "SECRET_KEY = 'django-insecure-_^39%)wfp910i*)2!2+ihrxbnrv$&44nm#pv-yf!7&mqhbgnkz'" > .env
 
-echo "======= ===Starting DOC Application  =============="
+echo "======= === = Starting DOC Application  =============="
 
 
 echo "============== Starting DJANGO Application  =============="
