@@ -145,10 +145,27 @@ jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+        strategy:
+        max-parallel: 1
+        matrix:
+            python-version: [3.9]
+
+        steps:
+        - name: Checkout code # checking our the code at current commit that triggers the workflow
+        uses: actions/checkout@v2
+
+        - name: Cache dependency # caching dependency will make our build faster.
+        uses: actions/cache@v2 # for more info checkout pip section documentation at https://github.com/actions/cache
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+            path: ~/.cache/pip
+            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+            restore-keys: |
+            ${{ runner.os }}-pip-
+        - uses: actions/checkout@v2
+        - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+            python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
