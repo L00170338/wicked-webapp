@@ -145,7 +145,7 @@ jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
-        strategy:
+    strategy:
         max-parallel: 1
         matrix:
             python-version: [3.9]
