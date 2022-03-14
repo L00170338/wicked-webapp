@@ -19,3 +19,4 @@ mdx_gh_links
 mkdocs
 mkdocs-redirects
 mkdocs-material
+coverage
