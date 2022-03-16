@@ -87,7 +87,7 @@ jobs:
       - run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          source venv/bin/activate && cd doc && python ../venv/bin/sphinx-apidoc -f -d 8 -o . .. && make html && cd ..
+          python -m venv venv && source venv/bin/activate && cd doc && python ../venv/bin/sphinx-apidoc -f -d 8 -o . .. && make html && cd ..
   deploy_staging_to_ecs:
     #if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-18.04
