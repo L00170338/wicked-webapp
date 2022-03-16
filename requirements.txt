@@ -20,3 +20,5 @@ mkdocs
 mkdocs-redirects
 mkdocs-material
 coverage
+sphinx
+mkdocs
