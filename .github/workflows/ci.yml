@@ -97,8 +97,11 @@ jobs:
         run: |
           cd doc && source ../venv/bin/activate && python ../venv/bin/sphinx-apidoc -f -d 8 -o . .. && make html && cd ..
 
-
-
+      - name: Publishing documents to gh-pages branch
+        run: |
+          pip install mkdocs
+          git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+          mkdocs gh-deploy --config-file mkdocs.yml --force
 
 
   deploy_staging_to_ecs:
