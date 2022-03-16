@@ -7,4 +7,4 @@ app:
   # -- The url of your application to scan --
   host: http://0.0.0.0:8000/ # (required)
 hawk:
-  failureThreshold: low
+  failureThreshold: high
