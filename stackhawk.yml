@@ -6,5 +6,7 @@ app:
   env: Development # (required)
   # -- The url of your application to scan --
   host: http://0.0.0.0:8000/ # (required)
+  excludePaths:
+    - /book/*
 hawk:
-  failureThreshold: high
+  failureThreshold: critical
