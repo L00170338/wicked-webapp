@@ -9,4 +9,4 @@ app:
   excludePaths:
     - /book/*
 hawk:
-  failureThreshold: critical
+  failureThreshold: high
