@@ -1,10 +1,10 @@
-.. Wicked-adventures documentation master file, created by
-   sphinx-quickstart on Sat Jan 22 15:29:51 2022.
+.. Wicked-Adventure documentation master file, created by
+   sphinx-quickstart on Fri Feb 11 11:09:30 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Wicked-adventures's documentation!
-=============================================
+Welcome to Wicked-Adventure's documentation!
+============================================
 
 .. toctree::
    :maxdepth: 2
