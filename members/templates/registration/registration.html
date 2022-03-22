@@ -1,20 +1,13 @@
 {% extends 'base-extended.html' %}
 {% block content %}
 
-<style>
-body {
-  background-image: url("/media/images/Key_1200.jpg");
-  background-size: 100% 100%;
-}
-</style>
-
 <div id="content", name="content", class="main">
     <div class="row justify-content-center mt-3">
         <div class="col-3">
-            <h1 class="mt-5 text-white",>Register now</h1>
+            <h1 class="mt-5">Register now</h1>
             <hr class="mt-0 mb-4">
 
-                <form method="POST" class="form-group text-white"> {% csrf_token %}
+                <form method="POST" class="form-group"> {% csrf_token %}
                     {{form.username.label_tag}}
                     {{form.username}}
                     {{form.username.errors}}
@@ -37,11 +30,9 @@ body {
                     
                     {{form.password2.errors}}
                     {{form.password1.errors}}
-					
-                    <p class="text-white ">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+
+                    <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
                     <button type="submit" class="btn btn-primary">Register</button>
-					<br>
-					<br>
                     
                 </form>
     </div>
