@@ -9,6 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install dependencies
+RUN apt-get update && apt install -y python3.9-dev python3-wheel 
 RUN pip install --upgrade pip 
 COPY ./requirements.txt /usr/src/app
 RUN pip install -r requirements.txt
