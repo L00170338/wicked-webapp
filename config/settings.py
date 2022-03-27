@@ -78,7 +78,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
 if os.getenv('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
@@ -94,14 +93,15 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.getenv('DB_NAME'),
-            'USER': os.getenv('DB_USER'),
-            'PASSWORD': os.getenv('DB_PASSWORD'),
-            'HOST': os.getenv('DB_HOST'),
-            'PORT': os.getenv('DB_PORT')
+            'NAME': 'wickedpark',
+            'USER': 'postgres',
+            'PASSWORD': 'Thomas2018',
+            'HOST': 'wickedpark.cxvo6tyuitau.eu-west-1.rds.amazonaws.com',
+            'PORT': '5432'
         }
     }
-    
+
+ 
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
