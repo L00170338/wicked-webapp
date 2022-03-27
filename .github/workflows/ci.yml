@@ -215,7 +215,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   ui-tests-newman-stage:
-    runs-on: postman/newman_alpine33
+    runs-on: postman/newman
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
