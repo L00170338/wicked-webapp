@@ -215,13 +215,15 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   ui-tests-newman-stage:
-    runs-on: postman/newman
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Running API tests for Staging system.
       run: |
+        apt install nodejs npm -y
+        npm install -g newman
         newman --version
         newman run ./tests/wicked-webapp-stage.postman_collection.json -e ./tests/wicked-webapp-stage.postman_collection.json
 
