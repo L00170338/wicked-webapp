@@ -107,7 +107,7 @@ jobs:
   deploy_staging_to_ecs:
     #if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-18.04
-    needs: [package-job]
+    needs: [package-job ]
     steps:
     - uses: silinternational/ecs-deploy@master
       env:
@@ -216,6 +216,7 @@ jobs:
 
   ui-tests-newman-stage:
     runs-on: ubuntu-latest
+    needs: [ deploy_staging_to_ecs ]
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
