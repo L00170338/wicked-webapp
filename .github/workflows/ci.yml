@@ -214,6 +214,18 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITTOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+  ui-tests-newman-stage:
+    runs-on: postman/newman_alpine33
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Running API tests for Staging system.
+      run: |
+        newman --version
+        newman run ./tests/wicked-webapp-stage.postman_collection.json -e ./tests/wicked-webapp-stage.postman_collection.json
+
+
   stackhawk-hawkscan:
     runs-on: ubuntu-latest
     steps:
