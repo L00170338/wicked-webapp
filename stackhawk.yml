@@ -7,9 +7,8 @@ app:
   # -- The url of your application to scan --
   host: http://0.0.0.0:8000/ # (required)
   excludePaths:
-    - /book/*
-    - /
-    - /sitemap.xml
-    - /robots.txt
+    - "/book/.*"
+    - "/sitemap.xml"
+    - "/robots.txt"
 hawk:
   failureThreshold: HIGH
