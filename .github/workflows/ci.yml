@@ -222,8 +222,8 @@ jobs:
 
     - name: Running API tests for Staging system.
       run: |
-        apt install nodejs npm -y
-        npm install -g newman
+        sudo apt install nodejs npm -y
+        sudo npm install -g newman
         newman --version
         newman run ./tests/wicked-webapp-stage.postman_collection.json -e ./tests/wicked-webapp-stage.postman_collection.json
 
