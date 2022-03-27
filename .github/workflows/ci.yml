@@ -228,6 +228,20 @@ jobs:
         newman --version
         newman run ./tests/wicked-webapp-stage.postman_collection.json -e ./tests/wicked-webapp-stage.postman_collection.json
 
+  ui-tests-newman-prod:
+    runs-on: ubuntu-latest
+    needs: [ deploy_prod_to_ecs ]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Running API tests for Staging system.
+      run: |
+        sudo apt install nodejs npm -y
+        sudo npm install -g newman
+        newman --version
+        newman run ./tests/wicked-webapp-prod.postman_collection.json -e ./tests/wicked-webapp-prod.postman_collection.json
+
 
   stackhawk-hawkscan:
     runs-on: ubuntu-latest
