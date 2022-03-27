@@ -135,7 +135,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-18.04
     environment: 'prod'
-    needs: [package-job, deploy_staging_to_ecs]
+    needs: [package-job, deploy_staging_to_ecs, ui-tests-newman-stage ]
     steps:
     - uses: silinternational/ecs-deploy@master
       env:
