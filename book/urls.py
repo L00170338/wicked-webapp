@@ -1,10 +1,3 @@
-"""
-Urls.py works the same as that of the urls.py in the project file structure.
-The primary aim being, linking the user’s URL request to the corresponding pages it is pointing to.
-You won’t find this under the app files.
-We create this by clicking on the New file option written on the top, after the Project name.
-"""
-
 from book.forms import BookingForm
 from django.urls import path, re_path
 from .views import AddAttraction, BookEdit, Home, CurrentTrip, CalendarView, Book, BookEdit, BookDelete, YourBooking

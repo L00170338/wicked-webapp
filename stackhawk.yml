@@ -8,5 +8,8 @@ app:
   host: http://0.0.0.0:8000/ # (required)
   excludePaths:
     - /book/*
+    - /
+    - /sitemap.xml
+    - /robots.txt
 hawk:
-  failureThreshold: high
+  failureThreshold: HIGH

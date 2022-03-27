@@ -22,3 +22,5 @@ mkdocs-material
 coverage
 sphinx
 mkdocs
+psycopg2-binary
+wheel

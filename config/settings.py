@@ -26,8 +26,8 @@ SECRET_KEY = "wagner"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#ALLOWED_HOSTS = ['127.0.0.1', '10.0.0.0/16', 'wicked-webapp-prod-lb-1131717752.eu-west-1.elb.amazonaws.com', 'wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com']
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 

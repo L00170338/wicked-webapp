@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "44b1d9d1-c7c7-49ad-8510-60d28286312d",
+		"name": "wicked-webapp-stage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HOME STATUS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/",
+					"protocol": "http",
+					"host": [
+						"wicked-webapp-lb-stage-997316379",
+						"eu-west-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://wicked-webapp-prod-lb-1131717752.eu-west-1.elb.amazonaws.com",
+							"protocol": "http",
+							"host": [
+								"wicked-webapp-prod-lb-1131717752",
+								"eu-west-1",
+								"elb",
+								"amazonaws",
+								"com"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 20 Mar 2022 18:56:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8156"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.10"
+						},
+						{
+							"key": "Expires",
+							"value": "Sun, 20 Mar 2022 18:56:13 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, no-cache, no-store, must-revalidate, private"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "csrftoken=74x36CpukyjfGqB1zcnLbgGJ1iUHLVu5U14ciJI08vss5mV3T7XNoWM2yY2tr33V; expires=Sun, 19 Mar 2023 18:56:13 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\"><head>\n<!-- Required meta tags -->\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- Bootstrap CSS -->\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\n<!--Google icons-->\n<link href=\"https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp\" rel=\"stylesheet\">\n<!-- Additional head tags -->\n    \n    \n  \n</head>\n<body>\n    <nav class=\"navbar navbar-expand-lg navbar-primary bg-dark\">\n        <div class=\"container-fluid\">\n            <a class=\"navbar-brand\" href=\"/\" style=\"color: white; font-size: 50px;\">\n                <span class=\"material-icons-outlined\" style=\"font-size: 40px;\">travel_explore</span>Wicked Adventures\n            </a>\n            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/members/login/\" style=\"color: white; padding-left: 20px;\">\n                        <button type=\"button\" class=\"btn btn-success\">Login</button>\n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/members/register/\" style=\"color: white; padding-left: 20px;\">\n                        <button type=\"button\" class=\"btn btn-success\">Register</button>\n                    </a>\n                </li>\n            </div>\n            <form class=\"d-flex\">\n                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n                <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>\n            </form>\n        </div>\n    </nav>\n    <!-- Content -->\n    <style>\nbody {\n  background-image: url(\"/media/images/Cor_1461968714244444290.jpg\");\n  background-size: 100% 100%;\n}\n</style>\n    <br>\n    <div class=\"form-group\" style=\"padding-top: 60px;\" style=\"padding-right: 200px:\">\n        <form method=\"POST\">\n            <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"Cv1q2PGLPyaNBxqTvaOMfe5PfauRgXiEpsyzeWZhDvj00tKVP5oOsUb8MQCDW5Ru\">\n            <div class=\"col-sm-2\">\n                <input type=\"text\" class=\"form-control\" name=\"username\" placeholder=\"Username\">\n            \n            </div>\n            <br>\n            <div class=\"col-sm-2\">\n                <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Password\">\n            \n            </div>\n            <br>\n            <br>\n            <button class=\"btn btn-primary\">Login</button>\n            <br>\n            <br>\n            <br>\n    \n        </div>\n        <br>\n        <br>\n        <br>\n        <!-- Optional JavaScript; choose one of the two! -->\n        <!-- Option 1: Bootstrap Bundle with Popper\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script> -->\n        <!-- Option 2: Separate Popper and Bootstrap JS -->\n        <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js\" integrity=\"sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT\" crossorigin=\"anonymous\"></script>\n        <!-- jQuery first, then Popper.js, then Bootstrap JS -->\n        <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\"\n    crossorigin=\"anonymous\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"\n    crossorigin=\"anonymous\"></script>\n        <!-- Footer -->\n        <footer class=\"text-center text-lg-start bg-light text-muted\">\n            <!-- Section: Social media -->\n            <section\n    class=\"d-flex justify-content-center justify-content-lg-between p-4 border-bottom\"\n  >\n                <!-- Left -->\n                <div class=\"me-5 d-none d-lg-block\">\n                    <span>Get connected with us on social networks:</span>\n                </div>\n                <!-- Left -->\n                <!-- Right -->\n                <div>\n                    <a href=\"\" class=\"me-4 text-reset\">\n                        <i class=\"fab fa-facebook-f\"></i>\n                    </a>\n                    <a href=\"\" class=\"me-4 text-reset\">\n                        <i class=\"fab fa-twitter\"></i>\n                    </a>\n                    <a href=\"\" class=\"me-4 text-reset\">\n                        <i class=\"fab fa-google\"></i>\n                    </a>\n                    <a href=\"\" class=\"me-4 text-reset\">\n                        <i class=\"fab fa-instagram\"></i>\n                    </a>\n                    <a href=\"\" class=\"me-4 text-reset\">\n                        <i class=\"fab fa-linkedin\"></i>\n                    </a>\n                    <a href=\"\" class=\"me-4 text-reset\">\n                        <i class=\"fab fa-github\"></i>\n                    </a>\n                </div>\n                <!-- Right -->\n  \n            </section>\n            <!-- Section: Social media -->\n            <!-- Section: Links  -->\n            <section class=\"\">\n                <div class=\"container text-center text-md-start mt-5\">\n                    <!-- Grid row -->\n                    <div class=\"row mt-3\">\n                        <!-- Grid column -->\n                        <div class=\"col-md-3 col-lg-4 col-xl-3 mx-auto mb-4\">\n                            <!-- Content -->\n                            <h6 class=\"text-uppercase fw-bold mb-4\">\n                                <i class=\"fas fa-gem me-3\"></i>Company name\n                            </h6>\n                            <p>\n            Here you can use rows and columns to organize your footer content. Lorem ipsum\n            dolor sit amet, consectetur adipisicing elit.\n          </p>\n                        </div>\n                        <!-- Grid column -->\n                        <!-- Grid column -->\n                        <div class=\"col-md-2 col-lg-2 col-xl-2 mx-auto mb-4\">\n                            <!-- Links -->\n                            <h6 class=\"text-uppercase fw-bold mb-4\">\n            Products\n          </h6>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">Angular</a>\n                            </p>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">React</a>\n                            </p>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">Vue</a>\n                            </p>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">Laravel</a>\n                            </p>\n                        </div>\n                        <!-- Grid column -->\n                        <!-- Grid column -->\n                        <div class=\"col-md-3 col-lg-2 col-xl-2 mx-auto mb-4\">\n                            <!-- Links -->\n                            <h6 class=\"text-uppercase fw-bold mb-4\">\n            Useful links\n          </h6>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">Pricing</a>\n                            </p>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">Settings</a>\n                            </p>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">Orders</a>\n                            </p>\n                            <p>\n                                <a href=\"#!\" class=\"text-reset\">Help</a>\n                            </p>\n                        </div>\n                        <!-- Grid column -->\n                        <!-- Grid column -->\n                        <div class=\"col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4\">\n                            <!-- Links -->\n                            <h6 class=\"text-uppercase fw-bold mb-4\">\n            Contact\n          </h6>\n                            <p>\n                                <i class=\"fas fa-home me-3\"></i> New York, NY 10012, US\n                            </p>\n                            <p>\n                                <i class=\"fas fa-envelope me-3\"></i>\n            info@example.com\n                            </p>\n                            <p>\n                                <i class=\"fas fa-phone me-3\"></i> + 01 234 567 88\n                            </p>\n                            <p>\n                                <i class=\"fas fa-print me-3\"></i> + 01 234 567 89\n                            </p>\n                        </div>\n                        <!-- Grid column -->\n      \n                    </div>\n                    <!-- Grid row -->\n    \n                </div>\n            </section>\n            <!-- Section: Links  -->\n            <!-- Copyright -->\n            <div class=\"text-center p-4\" style=\"background-color: rgba(0, 0, 0, 0.05);\">\n    © 2021 Copyright:\n    \n                <a class=\"text-reset fw-bold\" href=\"https://mdbootstrap.com/\">MDBootstrap.com</a>\n            </div>\n            <!-- Copyright -->\n        </footer>\n        <!-- Footer -->\n  \n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "USER LOGOUT STATUS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+					},
+					{
+						"key": "Referer",
+						"value": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cookie",
+						"value": "csrftoken=FHk591b3115JczXAdB02527ufVn1vzsELiXhO1gCHsKPTNzw9iedo65ivu3Q7Uqz; sessionid=mgtqevn9pqaq3m1k7simnwtku4yggfmk"
+					}
+				],
+				"url": {
+					"raw": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/members/logout/",
+					"protocol": "http",
+					"host": [
+						"wicked-webapp-lb-stage-997316379",
+						"eu-west-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"members",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User-1_Logout",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Upgrade-Insecure-Requests",
+								"value": "1"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+							},
+							{
+								"key": "Referer",
+								"value": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Cookie",
+								"value": "csrftoken=FHk591b3115JczXAdB02527ufVn1vzsELiXhO1gCHsKPTNzw9iedo65ivu3Q7Uqz; sessionid=mgtqevn9pqaq3m1k7simnwtku4yggfmk"
+							}
+						],
+						"url": {
+							"raw": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/members/logout/",
+							"protocol": "http",
+							"host": [
+								"wicked-webapp-lb-stage-997316379",
+								"eu-west-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"members",
+								"logout",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Mar 2022 12:50:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13618"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.11"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sessionid=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\"><head>\n<!-- Required meta tags -->\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- Bootstrap CSS -->\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\n<!--Google icons-->\n<link href=\"https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp\" rel=\"stylesheet\">\n<!-- Additional head tags -->\n    \n    \n  \n</head>\n<body>\n    <nav class=\"navbar navbar-expand-lg navbar-primary bg-dark\">\n        <div class=\"container-fluid\">\n            <a class=\"navbar-brand\" href=\"/\" style=\"color: white; font-size: 50px;\">\n                <span class=\"material-icons-outlined\" style=\"font-size: 40px;\">travel_explore</span>Wicked Adventures\n            </a>\n            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/members/login/\" style=\"color: white; padding-left: 20px;\">\n                        <button type=\"button\" class=\"btn btn-success\">Login</button>\n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/members/register/\" style=\"color: white; padding-left: 20px;\">\n                        <button type=\"button\" class=\"btn btn-success\">Register</button>\n                    </a>\n                </li>\n            </div>\n            <form class=\"d-flex\">\n                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n                <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>\n            </form>\n        </div>\n    </nav>\n    <div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-bs-ride=\"carousel\">\n        <div class=\"carousel-indicators\">\n            <button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>\n            <button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"1\" aria-label=\"Slide 2\"></button>\n            <button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"2\" aria-label=\"Slide 3\"></button>\n        </div>\n        <div class=\"carousel-inner\">\n            <div class=\"carousel-item active\">\n                <img src=\"../media/images/wp9783643-halloween-amusement-park-wallpapers.jpg\" class=\"d-block w-100\" alt=\"...\" style=\"height: 600px;\">\n                <div class=\"carousel-caption d-none d-md-block\">\n                    <h5>First slide label</h5>\n                    <p>Some representative placeholder content for the first slide.</p>\n                </div>\n            </div>\n            <div class=\"carousel-item\">\n                <img src=\"../media/images/wp9783629-halloween-amusement-park-wallpapers.jpg\" class=\"d-block w-100\" alt=\"...\" style=\"height: 600px;\">\n                <div class=\"carousel-caption d-none d-md-block\">\n                    <h5>Second slide label</h5>\n                    <p>Some representative placeholder content for the second slide.</p>\n                </div>\n            </div>\n            <div class=\"carousel-item\">\n                <img src=\"../media/images/wp9783614-halloween-amusement-park-wallpapers_1.jpg\" class=\"d-block w-100\" alt=\"...\" style=\"height: 600px;\">\n                <div class=\"carousel-caption d-none d-md-block\">\n                    <h5>Third slide label</h5>\n                    <p>Some representative placeholder content for the third slide.</p>\n                </div>\n            </div>\n        </div>\n        <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide=\"prev\">\n            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n            <span class=\"visually-hidden\">Previous</span>\n        </button>\n        <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide=\"next\">\n            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n            <span class=\"visually-hidden\">Next</span>\n        </button>\n    </div>\n    <br>\n    <div class=\"container-fluid bg-3 text-center\">\n        <h4>DISCOVER THE WICKED ADVENTURES PARK</h4>\n        <br>\n        <img src=\"../media/images/rollercoaster4.gif\" class=\"rounded-circle\" alt=\"...\" style=\"height: 200px; width:200px;  margin-right: 200px\">\n        <img src=\"../media/images/rollercoaster.gif.1\" class=\"rounded-circle\" alt=\"...\" style=\"height: 200px; width:200px;  margin-right: 200px\">\n        <img src=\"../media/images/A8j.gif\" class=\"rounded-circle\" alt=\"...\" style=\"height: 200px; width:200px; margin-right: 200px \">\n        <img src=\"../media/images/rollercoaster3.gif\" class=\"rounded-circle\" alt=\"...\" style=\"height: 200px; width:200px;   margin-right: 200px\">\n    </div>\n    <br>\n    <br>\n    <div class=\"container-fluid bg-3 text-center\">\n        <h4>BOOK YOUR NEXT ADVENTURE AT WICKED ADVENTURES</h4>\n        <br>\n    </div>\n    <br>\n    <!-- Content -->\n    <div style=\"display: inline-block; padding-top: 20px; padding-left: 50px;\">\n        <a href=\"/item/2/\">\n            <figure class=\"figure\">\n                <img src=\"/media/images/wp9783629-halloween-amusement-park-wallpapers.jpg\" class=\"figure-img img-fluid rounded\" style=\"width: 550px; height: 480px;\">\n                <figcaption class=\"figure-caption\" style=\"font-weight: bold; font-size: 17px;\">Paradise Peer - Price 15.0 € - Park: Wicked Dublin </figcaption>\n            </figure>\n        </a>\n    </div>\n    <div style=\"display: inline-block; padding-top: 20px; padding-left: 50px;\">\n        <a href=\"/item/3/\">\n            <figure class=\"figure\">\n                <img src=\"/media/images/wp3764456-theme-park-wallpapers.jpg\" class=\"figure-img img-fluid rounded\" style=\"width: 550px; height: 480px;\">\n                <figcaption class=\"figure-caption\" style=\"font-weight: bold; font-size: 17px;\">Wicker Roller Coaster - Price 14.0 € - Park: Wicked Dublin </figcaption>\n            </figure>\n        </a>\n    </div>\n    <div style=\"display: inline-block; padding-top: 20px; padding-left: 50px;\">\n        <a href=\"/item/4/\">\n            <figure class=\"figure\">\n                <img src=\"/media/images/wp9783723-halloween-amusement-park-wallpapers.jpg\" class=\"figure-img img-fluid rounded\" style=\"width: 550px; height: 480px;\">\n                <figcaption class=\"figure-caption\" style=\"font-weight: bold; font-size: 17px;\">Halloween Roller - Price 10.0 € - Park: Wicked Dublin </figcaption>\n            </figure>\n        </a>\n    </div>\n    <div style=\"display: inline-block; padding-top: 20px; padding-left: 50px;\">\n        <a href=\"/item/5/\">\n            <figure class=\"figure\">\n                <img src=\"/media/images/wp9783723-halloween-amusement-park-wallpapers_cO06B4e.jpg\" class=\"figure-img img-fluid rounded\" style=\"width: 550px; height: 480px;\">\n                <figcaption class=\"figure-caption\" style=\"font-weight: bold; font-size: 17px;\">Scary roller - Price 5.0 € - Park: Wicked Dublin </figcaption>\n            </figure>\n        </a>\n    </div>\n    <div style=\"display: inline-block; padding-top: 20px; padding-left: 50px;\">\n        <a href=\"/item/6/\">\n            <figure class=\"figure\">\n                <img src=\"/media/images/wp9783735-halloween-amusement-park-wallpapers.jpg\" class=\"figure-img img-fluid rounded\" style=\"width: 550px; height: 480px;\">\n                <figcaption class=\"figure-caption\" style=\"font-weight: bold; font-size: 17px;\">Scary Tombs - Price 10.0 € - Park: Wicked Dublin </figcaption>\n            </figure>\n        </a>\n    </div>\n    <div style=\"display: inline-block; padding-top: 20px; padding-left: 50px;\">\n        <a href=\"/item/7/\">\n            <figure class=\"figure\">\n                <img src=\"/media/images/wp9783643-halloween-amusement-park-wallpapers.jpg\" class=\"figure-img img-fluid rounded\" style=\"width: 550px; height: 480px;\">\n                <figcaption class=\"figure-caption\" style=\"font-weight: bold; font-size: 17px;\">Halloween Night - Price 10.0 € - Park: Wicked Dublin </figcaption>\n            </figure>\n        </a>\n    </div>\n    <div style=\"display: inline-block; padding-top: 20px; padding-left: 50px;\">\n        <a href=\"/item/8/\">\n            <figure class=\"figure\">\n                <img src=\"/media/images/wp9783635-halloween-amusement-park-wallpapers.jpg\" class=\"figure-img img-fluid rounded\" style=\"width: 550px; height: 480px;\">\n                <figcaption class=\"figure-caption\" style=\"font-weight: bold; font-size: 17px;\">Night Lights Events - Price 5.0 € - Park: Wicked Dublin </figcaption>\n            </figure>\n        </a>\n    </div>\n    <!-- Optional JavaScript; choose one of the two! -->\n    <!-- Option 1: Bootstrap Bundle with Popper\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script> -->\n    <!-- Option 2: Separate Popper and Bootstrap JS -->\n    <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js\" integrity=\"sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT\" crossorigin=\"anonymous\"></script>\n    <!-- jQuery first, then Popper.js, then Bootstrap JS -->\n    <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\"\n    crossorigin=\"anonymous\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"\n    crossorigin=\"anonymous\"></script>\n    <!-- Footer -->\n    <footer class=\"text-center text-lg-start bg-light text-muted\">\n        <!-- Section: Social media -->\n        <section\n    class=\"d-flex justify-content-center justify-content-lg-between p-4 border-bottom\"\n  >\n            <!-- Left -->\n            <div class=\"me-5 d-none d-lg-block\">\n                <span>Get connected with us on social networks:</span>\n            </div>\n            <!-- Left -->\n            <!-- Right -->\n            <div>\n                <a href=\"\" class=\"me-4 text-reset\">\n                    <i class=\"fab fa-facebook-f\"></i>\n                </a>\n                <a href=\"\" class=\"me-4 text-reset\">\n                    <i class=\"fab fa-twitter\"></i>\n                </a>\n                <a href=\"\" class=\"me-4 text-reset\">\n                    <i class=\"fab fa-google\"></i>\n                </a>\n                <a href=\"\" class=\"me-4 text-reset\">\n                    <i class=\"fab fa-instagram\"></i>\n                </a>\n                <a href=\"\" class=\"me-4 text-reset\">\n                    <i class=\"fab fa-linkedin\"></i>\n                </a>\n                <a href=\"\" class=\"me-4 text-reset\">\n                    <i class=\"fab fa-github\"></i>\n                </a>\n            </div>\n            <!-- Right -->\n  \n        </section>\n        <!-- Section: Social media -->\n        <!-- Section: Links  -->\n        <section class=\"\">\n            <div class=\"container text-center text-md-start mt-5\">\n                <!-- Grid row -->\n                <div class=\"row mt-3\">\n                    <!-- Grid column -->\n                    <div class=\"col-md-3 col-lg-4 col-xl-3 mx-auto mb-4\">\n                        <!-- Content -->\n                        <h6 class=\"text-uppercase fw-bold mb-4\">\n                            <i class=\"fas fa-gem me-3\"></i>Company name\n                        </h6>\n                        <p>\n            Here you can use rows and columns to organize your footer content. Lorem ipsum\n            dolor sit amet, consectetur adipisicing elit.\n          </p>\n                    </div>\n                    <!-- Grid column -->\n                    <!-- Grid column -->\n                    <div class=\"col-md-2 col-lg-2 col-xl-2 mx-auto mb-4\">\n                        <!-- Links -->\n                        <h6 class=\"text-uppercase fw-bold mb-4\">\n            Products\n          </h6>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">Angular</a>\n                        </p>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">React</a>\n                        </p>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">Vue</a>\n                        </p>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">Laravel</a>\n                        </p>\n                    </div>\n                    <!-- Grid column -->\n                    <!-- Grid column -->\n                    <div class=\"col-md-3 col-lg-2 col-xl-2 mx-auto mb-4\">\n                        <!-- Links -->\n                        <h6 class=\"text-uppercase fw-bold mb-4\">\n            Useful links\n          </h6>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">Pricing</a>\n                        </p>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">Settings</a>\n                        </p>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">Orders</a>\n                        </p>\n                        <p>\n                            <a href=\"#!\" class=\"text-reset\">Help</a>\n                        </p>\n                    </div>\n                    <!-- Grid column -->\n                    <!-- Grid column -->\n                    <div class=\"col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4\">\n                        <!-- Links -->\n                        <h6 class=\"text-uppercase fw-bold mb-4\">\n            Contact\n          </h6>\n                        <p>\n                            <i class=\"fas fa-home me-3\"></i> New York, NY 10012, US\n                        </p>\n                        <p>\n                            <i class=\"fas fa-envelope me-3\"></i>\n            info@example.com\n                        </p>\n                        <p>\n                            <i class=\"fas fa-phone me-3\"></i> + 01 234 567 88\n                        </p>\n                        <p>\n                            <i class=\"fas fa-print me-3\"></i> + 01 234 567 89\n                        </p>\n                    </div>\n                    <!-- Grid column -->\n      \n                </div>\n                <!-- Grid row -->\n    \n            </div>\n        </section>\n        <!-- Section: Links  -->\n        <!-- Copyright -->\n        <div class=\"text-center p-4\" style=\"background-color: rgba(0, 0, 0, 0.05);\">\n    © 2021 Copyright:\n    \n            <a class=\"text-reset fw-bold\" href=\"https://mdbootstrap.com/\">MDBootstrap.com</a>\n        </div>\n        <!-- Copyright -->\n    </footer>\n    <!-- Footer -->\n  \n</body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "Access_Paradise Peer adventure",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+					},
+					{
+						"key": "Referer",
+						"value": "http://wicked-webapp-prod-lb-1131717752.eu-west-1.elb.amazonaws.com/"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cookie",
+						"value": "csrftoken=xhvmQOlnyLYIvtBodtbJIpKc2TQEhLPmCqNIcNwXWrB6mJ8Mtk7nvGW5NSA9lfiB; sessionid=n4tos15gq2wed507u1m5seqcvlhsahpd"
+					}
+				],
+				"url": {
+					"raw": "http://wicked-webapp-prod-lb-1131717752.eu-west-1.elb.amazonaws.com/item/2/",
+					"protocol": "http",
+					"host": [
+						"wicked-webapp-prod-lb-1131717752",
+						"eu-west-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"item",
+						"2",
+						""
+					]
+				},
+				"description": "Access Paradise Peer Adventure page"
+			},
+			"response": [
+				{
+					"name": "Access_Paradise Peer adventure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Upgrade-Insecure-Requests",
+								"value": "1"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+							},
+							{
+								"key": "Referer",
+								"value": "http://wicked-webapp-prod-lb-1131717752.eu-west-1.elb.amazonaws.com/"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Cookie",
+								"value": "csrftoken=xhvmQOlnyLYIvtBodtbJIpKc2TQEhLPmCqNIcNwXWrB6mJ8Mtk7nvGW5NSA9lfiB; sessionid=n4tos15gq2wed507u1m5seqcvlhsahpd"
+							}
+						],
+						"url": {
+							"raw": "http://wicked-webapp-prod-lb-1131717752.eu-west-1.elb.amazonaws.com/item/2/",
+							"protocol": "http",
+							"host": [
+								"wicked-webapp-prod-lb-1131717752",
+								"eu-west-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"item",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Mar 2022 12:52:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "9271"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.11"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sessionid=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\"><head>\n<!-- Required meta tags -->\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- Bootstrap CSS -->\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\n<!--Google icons-->\n<link href=\"https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp\" rel=\"stylesheet\">\n<!-- Additional head tags -->\n    \n    \n  \n</head>\n<body>\n    <nav class=\"navbar navbar-expand-lg navbar-primary bg-dark\">\n        <div class=\"container-fluid\">\n            <a class=\"navbar-brand\" href=\"/\" style=\"color: white; font-size: 50px;\">\n                <span class=\"material-icons-outlined\" style=\"font-size: 40px;\">travel_explore</span>Wicked Adventures\n            </a>\n            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/members/login/\" style=\"color: white; padding-left: 20px;\">\n                        <button type=\"button\" class=\"btn btn-success\">Login</button>\n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/members/register/\" style=\"color: white; padding-left: 20px;\">\n                        <button type=\"button\" class=\"btn btn-success\">Register</button>\n                    </a>\n                </li>\n            </div>\n            <form class=\"d-flex\">\n                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n                <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>\n            </form>\n        </div>\n    </nav>\n    <!-- Content -->\n    <div id=\"carouselExampleCaptions  style=\"display: none;\" \" class=\"carousel slide\" data-bs-ride=\"carousel\">\n        <div class=\"carousel-indicators\">\n            <button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>\n            <button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"1\" aria-label=\"Slide 2\"></button>\n            <button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"2\" aria-label=\"Slide 3\"></button>\n        </div>\n        <div class=\"carousel-inner\" >\n            <div class=\"carousel-item active\">\n                <img src=\"/media/images/wp9783629-halloween-amusement-park-wallpapers.jpg\" class=\"d-block w-100\" alt=\"...\" style=\"height: 600px;\">\n                <div class=\"carousel-caption d-none d-md-block\">\n                    <h5>Paradise Peer</h5>\n                </div>\n            </div>\n        </div>\n        <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide=\"prev\">\n            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n            <span class=\"visually-hidden\">Previous</span>\n        </button>\n        <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide=\"next\">\n            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n            <span class=\"visually-hidden\">Next</span>\n        </button>\n    </div>\n    <br>\n    <div class=\"card align-self:center\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title\">Paradise Peer</h5>\n            <p class=\"card-text\">asasasa</p>\n        </div>\n        <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item\">Location: Wicked Dublin</li>\n            <li class=\"list-group-item\"> Price: € 15.0</li>\n            <li class=\"list-group-item\">Max Weight: 120KG</li>\n            <li class=\"list-group-item\">Min Height 1.2M</li>\n        </ul>\n        <div class=\"card-body\">\n            <a href=\"/book/2/\" class=\"btn btn-primary\">Book</a>\n        </div>\n    </div>\n</div>\n<!-- Optional JavaScript; choose one of the two! -->\n<!-- Option 1: Bootstrap Bundle with Popper\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4\" crossorigin=\"anonymous\"></script> -->\n<!-- Option 2: Separate Popper and Bootstrap JS -->\n<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js\" integrity=\"sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT\" crossorigin=\"anonymous\"></script>\n<!-- jQuery first, then Popper.js, then Bootstrap JS -->\n<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\"\n    crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"\n    crossorigin=\"anonymous\"></script>\n<!-- Footer -->\n<footer class=\"text-center text-lg-start bg-light text-muted\">\n    <!-- Section: Social media -->\n    <section\n    class=\"d-flex justify-content-center justify-content-lg-between p-4 border-bottom\"\n  >\n        <!-- Left -->\n        <div class=\"me-5 d-none d-lg-block\">\n            <span>Get connected with us on social networks:</span>\n        </div>\n        <!-- Left -->\n        <!-- Right -->\n        <div>\n            <a href=\"\" class=\"me-4 text-reset\">\n                <i class=\"fab fa-facebook-f\"></i>\n            </a>\n            <a href=\"\" class=\"me-4 text-reset\">\n                <i class=\"fab fa-twitter\"></i>\n            </a>\n            <a href=\"\" class=\"me-4 text-reset\">\n                <i class=\"fab fa-google\"></i>\n            </a>\n            <a href=\"\" class=\"me-4 text-reset\">\n                <i class=\"fab fa-instagram\"></i>\n            </a>\n            <a href=\"\" class=\"me-4 text-reset\">\n                <i class=\"fab fa-linkedin\"></i>\n            </a>\n            <a href=\"\" class=\"me-4 text-reset\">\n                <i class=\"fab fa-github\"></i>\n            </a>\n        </div>\n        <!-- Right -->\n  \n    </section>\n    <!-- Section: Social media -->\n    <!-- Section: Links  -->\n    <section class=\"\">\n        <div class=\"container text-center text-md-start mt-5\">\n            <!-- Grid row -->\n            <div class=\"row mt-3\">\n                <!-- Grid column -->\n                <div class=\"col-md-3 col-lg-4 col-xl-3 mx-auto mb-4\">\n                    <!-- Content -->\n                    <h6 class=\"text-uppercase fw-bold mb-4\">\n                        <i class=\"fas fa-gem me-3\"></i>Company name\n                    </h6>\n                    <p>\n            Here you can use rows and columns to organize your footer content. Lorem ipsum\n            dolor sit amet, consectetur adipisicing elit.\n          </p>\n                </div>\n                <!-- Grid column -->\n                <!-- Grid column -->\n                <div class=\"col-md-2 col-lg-2 col-xl-2 mx-auto mb-4\">\n                    <!-- Links -->\n                    <h6 class=\"text-uppercase fw-bold mb-4\">\n            Products\n          </h6>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">Angular</a>\n                    </p>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">React</a>\n                    </p>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">Vue</a>\n                    </p>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">Laravel</a>\n                    </p>\n                </div>\n                <!-- Grid column -->\n                <!-- Grid column -->\n                <div class=\"col-md-3 col-lg-2 col-xl-2 mx-auto mb-4\">\n                    <!-- Links -->\n                    <h6 class=\"text-uppercase fw-bold mb-4\">\n            Useful links\n          </h6>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">Pricing</a>\n                    </p>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">Settings</a>\n                    </p>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">Orders</a>\n                    </p>\n                    <p>\n                        <a href=\"#!\" class=\"text-reset\">Help</a>\n                    </p>\n                </div>\n                <!-- Grid column -->\n                <!-- Grid column -->\n                <div class=\"col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4\">\n                    <!-- Links -->\n                    <h6 class=\"text-uppercase fw-bold mb-4\">\n            Contact\n          </h6>\n                    <p>\n                        <i class=\"fas fa-home me-3\"></i> New York, NY 10012, US\n                    </p>\n                    <p>\n                        <i class=\"fas fa-envelope me-3\"></i>\n            info@example.com\n                    </p>\n                    <p>\n                        <i class=\"fas fa-phone me-3\"></i> + 01 234 567 88\n                    </p>\n                    <p>\n                        <i class=\"fas fa-print me-3\"></i> + 01 234 567 89\n                    </p>\n                </div>\n                <!-- Grid column -->\n      \n            </div>\n            <!-- Grid row -->\n    \n        </div>\n    </section>\n    <!-- Section: Links  -->\n    <!-- Copyright -->\n    <div class=\"text-center p-4\" style=\"background-color: rgba(0, 0, 0, 0.05);\">\n    © 2021 Copyright:\n    \n        <a class=\"text-reset fw-bold\" href=\"https://mdbootstrap.com/\">MDBootstrap.com</a>\n    </div>\n    <!-- Copyright -->\n</footer>\n<!-- Footer -->\n  \n</body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "Admin_delete a profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+					},
+					{
+						"key": "Referer",
+						"value": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/admin/auth/user/"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cookie",
+						"value": "csrftoken=8g90kQuSVQJZrC7nKwQydcOcPivUFOHmi3ZZf7TBaaTyqA10GhS3JwPYOyaVAQh2; sessionid=cg97i3489s8170h2rr3bfs85orp97r3n; messages=W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBkZWxldGVkIDEgdXNlci4iXV0:1nX97w:-QM9LDhNRjzCLYFCsBhF4Gv8Kvpd_yM-9C1k36Wcjqo"
+					}
+				],
+				"url": {
+					"raw": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/admin/auth/user/",
+					"protocol": "http",
+					"host": [
+						"wicked-webapp-lb-stage-997316379",
+						"eu-west-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"admin",
+						"auth",
+						"user",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin_delete a profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0"
+							},
+							{
+								"key": "Upgrade-Insecure-Requests",
+								"value": "1"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+							},
+							{
+								"key": "Referer",
+								"value": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/admin/auth/user/"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "Cookie",
+								"value": "csrftoken=8g90kQuSVQJZrC7nKwQydcOcPivUFOHmi3ZZf7TBaaTyqA10GhS3JwPYOyaVAQh2; sessionid=cg97i3489s8170h2rr3bfs85orp97r3n; messages=W1siX19qc29uX21lc3NhZ2UiLDAsMjUsIlN1Y2Nlc3NmdWxseSBkZWxldGVkIDEgdXNlci4iXV0:1nX97w:-QM9LDhNRjzCLYFCsBhF4Gv8Kvpd_yM-9C1k36Wcjqo"
+							}
+						],
+						"url": {
+							"raw": "http://wicked-webapp-lb-stage-997316379.eu-west-1.elb.amazonaws.com/admin/auth/user/",
+							"protocol": "http",
+							"host": [
+								"wicked-webapp-lb-stage-997316379",
+								"eu-west-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"admin",
+								"auth",
+								"user",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Mar 2022 22:17:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12529"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.11"
+						},
+						{
+							"key": "Expires",
+							"value": "Wed, 23 Mar 2022 22:17:59 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, no-cache, no-store, must-revalidate, private"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "csrftoken=8g90kQuSVQJZrC7nKwQydcOcPivUFOHmi3ZZf7TBaaTyqA10GhS3JwPYOyaVAQh2; expires=Wed, 22 Mar 2023 22:17:59 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en-us\" dir=\"ltr\">\n    <head>\n        <title>Select user to change | Django site admin</title>\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/admin/css/base.css\">\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/admin/css/nav_sidebar.css\">\n        <script src=\"/static/admin/js/nav_sidebar.js\" defer></script>\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/admin/css/changelists.css\">\n        <script src=\"/admin/jsi18n/\"></script>\n        <script src=\"/static/admin/js/vendor/jquery/jquery.js\"></script>\n        <script src=\"/static/admin/js/jquery.init.js\"></script>\n        <script src=\"/static/admin/js/core.js\"></script>\n        <script src=\"/static/admin/js/admin/RelatedObjectLookups.js\"></script>\n        <script src=\"/static/admin/js/actions.js\"></script>\n        <script src=\"/static/admin/js/urlify.js\"></script>\n        <script src=\"/static/admin/js/prepopulate.js\"></script>\n        <script src=\"/static/admin/js/vendor/xregexp/xregexp.js\"></script>\n        <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/admin/css/responsive.css\">\n        <meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n    </head>\n    <body class=\" app-auth model-user change-list\"\n  data-admin-utc-offset=\"0\">\n        <!-- Container -->\n        <div id=\"container\">\n            <!-- Header -->\n            <div id=\"header\">\n                <div id=\"branding\">\n                    <h1 id=\"site-name\">\n                        <a href=\"/admin/\">Django administration</a>\n                    </h1>\n                </div>\n                <div id=\"user-tools\">\n            \n                Welcome,\n                \n                    <strong>Devops</strong>.\n                    <a href=\"/\">View site</a> /\n                    <a href=\"/admin/password_change/\">Change password</a> /\n                    <a href=\"/admin/logout/\">Log out</a>\n                </div>\n            </div>\n            <!-- END Header -->\n            <div class=\"breadcrumbs\">\n                <a href=\"/admin/\">Home</a>\n&rsaquo;\n                <a href=\"/admin/auth/\">Authentication and Authorization</a>\n&rsaquo; Users\n            </div>\n            <div class=\"main shifted\" id=\"main\">\n                <button class=\"sticky toggle-nav-sidebar\" id=\"toggle-nav-sidebar\" aria-label=\"Toggle navigation\"></button>\n                <nav class=\"sticky\" id=\"nav-sidebar\">\n                    <div class=\"app-auth module current-app\">\n                        <table>\n                            <caption>\n                                <a href=\"/admin/auth/\" class=\"section\" title=\"Models in the Authentication and Authorization application\">Authentication and Authorization</a>\n                            </caption>\n                            <tr class=\"model-group\">\n                                <th scope=\"row\">\n                                    <a href=\"/admin/auth/group/\">Groups</a>\n                                </th>\n                                <td>\n                                    <a href=\"/admin/auth/group/add/\" class=\"addlink\">Add</a>\n                                </td>\n                            </tr>\n                            <tr class=\"model-user current-model\">\n                                <th scope=\"row\">\n                                    <a href=\"/admin/auth/user/\" aria-current=\"page\">Users</a>\n                                </th>\n                                <td>\n                                    <a href=\"/admin/auth/user/add/\" class=\"addlink\">Add</a>\n                                </td>\n                            </tr>\n                        </table>\n                    </div>\n                    <div class=\"app-book module\">\n                        <table>\n                            <caption>\n                                <a href=\"/admin/book/\" class=\"section\" title=\"Models in the Book application\">Book</a>\n                            </caption>\n                            <tr class=\"model-attraction\">\n                                <th scope=\"row\">\n                                    <a href=\"/admin/book/attraction/\">Attractions</a>\n                                </th>\n                                <td>\n                                    <a href=\"/admin/book/attraction/add/\" class=\"addlink\">Add</a>\n                                </td>\n                            </tr>\n                            <tr class=\"model-booking\">\n                                <th scope=\"row\">\n                                    <a href=\"/admin/book/booking/\">Bookings</a>\n                                </th>\n                                <td>\n                                    <a href=\"/admin/book/booking/add/\" class=\"addlink\">Add</a>\n                                </td>\n                            </tr>\n                            <tr class=\"model-location\">\n                                <th scope=\"row\">\n                                    <a href=\"/admin/book/location/\">Locations</a>\n                                </th>\n                                <td>\n                                    <a href=\"/admin/book/location/add/\" class=\"addlink\">Add</a>\n                                </td>\n                            </tr>\n                            <tr class=\"model-profile\">\n                                <th scope=\"row\">\n                                    <a href=\"/admin/book/profile/\">Profiles</a>\n                                </th>\n                                <td>\n                                    <a href=\"/admin/book/profile/add/\" class=\"addlink\">Add</a>\n                                </td>\n                            </tr>\n                        </table>\n                    </div>\n                </nav>\n                <div class=\"content\">\n                    <!-- Content -->\n                    <div id=\"content\" class=\"\">\n                        <h1>Select user to change</h1>\n                        <div id=\"content-main\">\n                            <ul class=\"object-tools\">\n                                <li>\n                                    <a href=\"/admin/auth/user/add/\" class=\"addlink\">\n      Add user\n    </a>\n                                </li>\n                            </ul>\n                            <div class=\"module filtered\" id=\"changelist\">\n                                <div class=\"changelist-form-container\">\n                                    <div id=\"toolbar\">\n                                        <form id=\"changelist-search\" method=\"get\">\n                                            <div>\n                                                <!-- DIV needed for valid HTML -->\n                                                <label for=\"searchbar\">\n                                                    <img src=\"/static/admin/img/search.svg\" alt=\"Search\">\n                                                </label>\n                                                <input type=\"text\" size=\"40\" name=\"q\" value=\"\" id=\"searchbar\" autofocus>\n                                                <input type=\"submit\" value=\"Search\">\n\n\n\n                                            </div>\n                                        </form>\n                                    </div>\n                                    <form id=\"changelist-form\" method=\"post\" novalidate>\n                                        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"MBWtpXhrKWHaDQIObPqvK1aI5s1cWzMOWoMskeGaZgRJCOCr7As0glbu4IGdRBmu\">\n                                        <div class=\"actions\">\n                                            <label>Action: \n                                                <select name=\"action\" required>\n                                                    <option value=\"\" selected>---------</option>\n                                                    <option value=\"delete_selected\">Delete selected users</option>\n                                                </select>\n                                            </label>\n                                            <input type=\"hidden\" name=\"select_across\" value=\"0\" class=\"select-across\">\n                                            <button type=\"submit\" class=\"button\" title=\"Run the selected action\" name=\"index\" value=\"0\">Go</button>\n                                            <span class=\"action-counter\" data-actions-icnt=\"9\">0 of 9 selected</span>\n                                        </div>\n                                        <div class=\"results\">\n                                            <table id=\"result_list\">\n                                                <thead>\n                                                    <tr>\n                                                        <th scope=\"col\" class=\"action-checkbox-column\">\n                                                            <div class=\"text\">\n                                                                <span>\n                                                                    <input type=\"checkbox\" id=\"action-toggle\">\n                                                                </span>\n                                                            </div>\n                                                            <div class=\"clear\"></div>\n                                                        </th>\n                                                        <th scope=\"col\" class=\"sortable column-username sorted ascending\">\n                                                            <div class=\"sortoptions\">\n                                                                <a class=\"sortremove\" href=\"?o=\" title=\"Remove from sorting\"></a>\n                                                                <a href=\"?o=-1\" class=\"toggle ascending\" title=\"Toggle sorting\"></a>\n                                                            </div>\n                                                            <div class=\"text\">\n                                                                <a href=\"?o=-1\">Username</a>\n                                                            </div>\n                                                            <div class=\"clear\"></div>\n                                                        </th>\n                                                        <th scope=\"col\" class=\"sortable column-email\">\n                                                            <div class=\"text\">\n                                                                <a href=\"?o=2.1\">Email address</a>\n                                                            </div>\n                                                            <div class=\"clear\"></div>\n                                                        </th>\n                                                        <th scope=\"col\" class=\"sortable column-first_name\">\n                                                            <div class=\"text\">\n                                                                <a href=\"?o=3.1\">First name</a>\n                                                            </div>\n                                                            <div class=\"clear\"></div>\n                                                        </th>\n                                                        <th scope=\"col\" class=\"sortable column-last_name\">\n                                                            <div class=\"text\">\n                                                                <a href=\"?o=4.1\">Last name</a>\n                                                            </div>\n                                                            <div class=\"clear\"></div>\n                                                        </th>\n                                                        <th scope=\"col\" class=\"sortable column-is_staff\">\n                                                            <div class=\"text\">\n                                                                <a href=\"?o=5.1\">Staff status</a>\n                                                            </div>\n                                                            <div class=\"clear\"></div>\n                                                        </th>\n                                                    </tr>\n                                                </thead>\n                                                <tbody>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"7\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/7/change/\">devops</a>\n                                                        </th>\n                                                        <td class=\"field-email\">devops@test.com</td>\n                                                        <td class=\"field-first_name\">Devops</td>\n                                                        <td class=\"field-last_name\">Test</td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-yes.svg\" alt=\"True\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"8\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/8/change/\">newregister</a>\n                                                        </th>\n                                                        <td class=\"field-email\">newregister@teste.com</td>\n                                                        <td class=\"field-first_name\">new</td>\n                                                        <td class=\"field-last_name\">register</td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-no.svg\" alt=\"False\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"10\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/10/change/\">test152</a>\n                                                        </th>\n                                                        <td class=\"field-email\">test45@testtest.com</td>\n                                                        <td class=\"field-first_name\">Sunday</td>\n                                                        <td class=\"field-last_name\">Monday</td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-no.svg\" alt=\"False\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"6\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/6/change/\">thaisfrade</a>\n                                                        </th>\n                                                        <td class=\"field-email\">thais@test.com</td>\n                                                        <td class=\"field-first_name\"></td>\n                                                        <td class=\"field-last_name\"></td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-yes.svg\" alt=\"True\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"1\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/1/change/\">wagner</a>\n                                                        </th>\n                                                        <td class=\"field-email\">wagner@wagner.com</td>\n                                                        <td class=\"field-first_name\"></td>\n                                                        <td class=\"field-last_name\"></td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-yes.svg\" alt=\"True\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"4\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/4/change/\">wagnerlima</a>\n                                                        </th>\n                                                        <td class=\"field-email\">wagnerlima@teste.com</td>\n                                                        <td class=\"field-first_name\"></td>\n                                                        <td class=\"field-last_name\"></td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-yes.svg\" alt=\"True\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"3\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/3/change/\">wlima</a>\n                                                        </th>\n                                                        <td class=\"field-email\">wlima@teste.com</td>\n                                                        <td class=\"field-first_name\"></td>\n                                                        <td class=\"field-last_name\"></td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-yes.svg\" alt=\"True\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"5\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/5/change/\">wlimaribeiro</a>\n                                                        </th>\n                                                        <td class=\"field-email\">wlimaribeiro@test.com</td>\n                                                        <td class=\"field-first_name\"></td>\n                                                        <td class=\"field-last_name\"></td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-yes.svg\" alt=\"True\">\n                                                        </td>\n                                                    </tr>\n                                                    <tr>\n                                                        <td class=\"action-checkbox\">\n                                                            <input type=\"checkbox\" name=\"_selected_action\" value=\"2\" class=\"action-select\">\n                                                        </td>\n                                                        <th class=\"field-username\">\n                                                            <a href=\"/admin/auth/user/2/change/\">wribeiro</a>\n                                                        </th>\n                                                        <td class=\"field-email\">wribeiro.it@gmail.com</td>\n                                                        <td class=\"field-first_name\">Wagner</td>\n                                                        <td class=\"field-last_name\">Ribeiro</td>\n                                                        <td class=\"field-is_staff\">\n                                                            <img src=\"/static/admin/img/icon-no.svg\" alt=\"False\">\n                                                        </td>\n                                                    </tr>\n                                                </tbody>\n                                            </table>\n                                        </div>\n                                        <p class=\"paginator\">\n\n9 users\n\n\n</p>\n                                    </form>\n                                </div>\n                                <div id=\"changelist-filter\">\n                                    <h2>Filter</h2>\n                                    <h3> By staff status </h3>\n                                    <ul>\n                                        <li class=\"selected\">\n                                            <a href=\"?\" title=\"All\">All</a>\n                                        </li>\n                                        <li>\n                                            <a href=\"?is_staff__exact=1\" title=\"Yes\">Yes</a>\n                                        </li>\n                                        <li>\n                                            <a href=\"?is_staff__exact=0\" title=\"No\">No</a>\n                                        </li>\n                                    </ul>\n                                    <h3> By superuser status </h3>\n                                    <ul>\n                                        <li class=\"selected\">\n                                            <a href=\"?\" title=\"All\">All</a>\n                                        </li>\n                                        <li>\n                                            <a href=\"?is_superuser__exact=1\" title=\"Yes\">Yes</a>\n                                        </li>\n                                        <li>\n                                            <a href=\"?is_superuser__exact=0\" title=\"No\">No</a>\n                                        </li>\n                                    </ul>\n                                    <h3> By active </h3>\n                                    <ul>\n                                        <li class=\"selected\">\n                                            <a href=\"?\" title=\"All\">All</a>\n                                        </li>\n                                        <li>\n                                            <a href=\"?is_active__exact=1\" title=\"Yes\">Yes</a>\n                                        </li>\n                                        <li>\n                                            <a href=\"?is_active__exact=0\" title=\"No\">No</a>\n                                        </li>\n                                    </ul>\n                                </div>\n                            </div>\n                        </div>\n                        <br class=\"clear\">\n        \n                    </div>\n                    <!-- END Content -->\n                    <div id=\"footer\"></div>\n                </div>\n            </div>\n        </div>\n        <!-- END Container -->\n    </body>\n</html>"
+				}
+			]
+		}
+	]
+}
