@@ -362,6 +362,11 @@ class InconsistentGetImageDimensionsBug(unittest.TestCase):
 
 @unittest.skipUnless(Image, "Pillow not installed")
 class GetImageDimensionsTests(unittest.TestCase):
+    """
+    This Test checks the images. Opens the image, checks is dimantion,
+    compare with expected value.    
+    """      
+
     def test_invalid_image(self):
         """
         get_image_dimensions() should return (None, None) for the dimensions of
@@ -374,7 +379,68 @@ class GetImageDimensionsTests(unittest.TestCase):
         with open(img_path, "rb") as fh:
             size = images.get_image_dimensions(fh)
             #self.assertEqual(size, (None, None))
-            self.assertEqual(size, (1200, 675))
+            self.assertEqual(size, (1200, 675))        
+            
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//Cor_1461968714244444290.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1200, 628))            
+            
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//Scariest-Roller-Coasters-in-the-world.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1200, 600))  
+        
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp3764456-theme-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1920, 1200))              
+ 
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783627-halloween-amusement-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1244, 700))  
+        
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783629-halloween-amusement-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1920, 1080))  
+                     
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783635-halloween-amusement-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1920, 1200))  
+                    
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783635-halloween-amusement-park-wallpapers_3RSASgL.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1920, 1200))  
+            
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783638-halloween-amusement-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (2560, 1440))  
+            
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783643-halloween-amusement-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1682, 1122))  
+            
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783723-halloween-amusement-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1440, 900))    
+
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783723-halloween-amusement-park-wallpapers_cO06B4e.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1440, 900))   
+
+        img_path = os.path.join(os.path.dirname(__file__), "..//media//images//wp9783735-halloween-amusement-park-wallpapers.jpg")
+        with open(img_path, "rb") as fh:
+            size = images.get_image_dimensions(fh)
+            self.assertEqual(size, (1600, 900))   
+            
 
     def test_valid_image(self):
         """
@@ -391,17 +457,6 @@ class GetImageDimensionsTests(unittest.TestCase):
                 with open(img_path, "rb") as fh:
                     size = images.get_image_dimensions(fh)
                     self.assertEqual(size, (None, None))
-
-    #def test_missing_file(self):
-    #    size = images.get_image_dimensions("missing.png")
-    #    self.assertEqual(size, (None, None))
-
-    #@unittest.skipUnless(HAS_WEBP, "WEBP not installed")
-    #def test_webp(self):
-    #    img_path = os.path.join(os.path.dirname(__file__), "test.webp")
-    #    with open(img_path, "rb") as fh:
-    #        size = images.get_image_dimensions(fh)
-    #    self.assertEqual(size, (540, 405))
 
 
 class FileMoveSafeTests(unittest.TestCase):

@@ -1,4 +1,17 @@
 site_name: Wicked Adventures
-site_url: https://L00170338.github.io/wicked-webapp
+site_url: https://devopslecturer.github.io/awpgdip2022/
 repo_name: GitHub
-docs_dir: doc/_build/html
+docs_dir: doc/
+nav:
+    - Home: index.md
+    - AutoDocs: autodoc.md
+    - Back-end-testing: back-end-testing.md
+    - Code documentation: code.md
+    - DAST: dast.md
+    - Deployment: deployment.md
+    - Installation: installation.md
+    - Front-end-testing: front-end-testing.md
+    - Monitoring: monitoring.md
+    - SAST: sast.md
+theme: readthedocs
+
