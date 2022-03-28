@@ -17,7 +17,7 @@ on:
 
 # three job definition
 jobs:
-  health-check-job: # health check job for testing and code formatting check
+  build-testing: # health check job for testing and code formatting check
     runs-on: ubuntu-latest # os for running the job
     services:
       postgres: # we need a postgres docker image to be booted a side car service to run the tests that needs a db
@@ -54,9 +54,9 @@ jobs:
         run: python manage.py migrate
       - name: Run Test # running tests
         run: python manage.py test
-  package-job: # package job for building and publishing docker images
+  build-docker-artifacts: # package job for building and publishing docker images
     runs-on: ubuntu-latest
-    needs: [health-check-job] # will be fired if and only if health-check-job is passed.
+    needs: [build-testing , sonar-scan , ui_testing_selenium] # will be fired if and only if health-check-job is passed.
     if: ${{ github.event_name == 'push' }} # will be fired if the trigger event is a push event.
     steps:
       - name: Checkout Code # checking out code.
@@ -109,7 +109,7 @@ jobs:
   deploy_staging_to_ecs:
     #if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-18.04
-    needs: [package-job ]
+    needs: [ build-docker-artifacts ]
     steps:
     - uses: silinternational/ecs-deploy@master
       env:
@@ -137,7 +137,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-18.04
     environment: 'prod'
-    needs: [package-job, deploy_staging_to_ecs, ui-tests-newman-stage ]
+    needs: [ build-docker-artifacts, deploy_staging_to_ecs, ui-tests-newman-stage ]
     steps:
     - uses: silinternational/ecs-deploy@master
       env:
@@ -161,19 +161,9 @@ jobs:
         timeout: '360'
 
 
-  Sonar-Scan:
+  sonar-scan:
     runs-on: ubuntu-latest
-    services:
-      postgres: # we need a postgres docker image to be booted a side car service to run the tests that needs a db
-        image: postgres
-        env: # the environment variable must match with app/settings.py if block of DATBASES variable otherwise test will fail due to connectivity issue.
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: github-actions
-        ports:
-          - 5432:5432 # exposing 5432 port for application to use
-        # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    needs: [ build-testing ]
     strategy:
       max-parallel: 1
       matrix:
@@ -258,17 +248,6 @@ jobs:
 
   stackhawk-hawkscan:
     runs-on: ubuntu-latest
-    services:
-      postgres: # we need a postgres docker image to be booted a side car service to run the tests that needs a db
-        image: postgres
-        env: # the environment variable must match with app/settings.py if block of DATBASES variable otherwise test will fail due to connectivity issue.
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: github-actions
-        ports:
-          - 5432:5432 # exposing 5432 port for application to use
-        # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
     - name: Checkout code 
       uses: actions/checkout@v2
@@ -313,19 +292,8 @@ jobs:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
 
 
-  UI_Testing_Selenium:
+  ui_testing_selenium:
     runs-on: ubuntu-latest
-    services:
-      postgres: # we need a postgres docker image to be booted a side car service to run the tests that needs a db
-        image: postgres
-        env: # the environment variable must match with app/settings.py if block of DATBASES variable otherwise test will fail due to connectivity issue.
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: github-actions
-        ports:
-          - 5432:5432 # exposing 5432 port for application to use
-        # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
     - name: Checkout code 
       uses: actions/checkout@v2
