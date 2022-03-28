@@ -75,7 +75,7 @@ jobs:
           echo "DB_NAME = '${{ secrets.DB_NAME_PROD }}'" >> .env
           echo "DB_USER = '${{ secrets.DB_USERNAME_PROD }}'" >> .env
           echo "DB_HOST = '${{ secrets.DB_ENDPOINT_PROD }}'" >> .env
-          echo "DB_PORT = '5432'i" >> .env          
+          echo "DB_PORT = '5432'" >> .env          
 
       - name: Build and push Docker image
         id:  docker_build
