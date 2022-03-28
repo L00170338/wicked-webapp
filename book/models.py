@@ -15,13 +15,6 @@ class Location(models.Model):
 
 
 class Attraction(models.Model):
-    FLIGHT_FROM = [
-        ('Warszawa', 'Warszawa'),
-        ('Katowice', 'Katowice'),
-        ('Wrocław', 'Wrocław'),
-        ('Gdańsk', 'Gdańsk'),
-        ('Kraków', 'Kraków'),
-    ]
     title = models.CharField(max_length=100)
     image = models.ImageField(null=True, blank=True, upload_to="images/")
     location = models.ForeignKey(Location, on_delete=models.CASCADE)

@@ -5,7 +5,7 @@
 {% if user.is_authenticated %}
 {% if user.profile.id %}
   <div class="form-group">
-  <form method="POST"  onsubmit="return confirm ('Please note, to participate you must agree and confirm no underlaying healthy issues. Pregnant women or guests with hard casts cannot participate. Do you want to proceed with the booking?')">
+  <form method="POST"  onsubmit="return confirm ('Please note, to participate you must agree and confirm no underlaying health issues. Pregnant women or guests with hard casts cannot participate. Do you want to proceed with the booking?')">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit" class="btn btn-success" name="book_booking_button">Book</button>
