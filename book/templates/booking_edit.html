@@ -7,7 +7,7 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="btn btn-primary">Edit Booking</button>
+            <button class="btn btn-primary" name = "booking_edit_button" >Edit Booking</button>
         </form>
         </div>
 

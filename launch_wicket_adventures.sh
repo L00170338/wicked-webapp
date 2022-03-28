@@ -14,4 +14,4 @@ echo "======= Exporting key to .env file =============="
 echo "SECRET_KEY = 'django-insecure-_^39%)wfp910i*)2!2+ihrxbnrv$&44nm#pv-yf!7&mqhbgnkz'" > .env
 
 echo "======= Starting DJANGO Application  =============="
-source venv/bin/activate && python3.9 manage.py runserver --insecure 0.0.0.0:8000
+python3.9 -m venv venv && source venv/bin/activate && python3.9 manage.py runserver --insecure 0.0.0.0:8000

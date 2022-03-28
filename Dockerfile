@@ -19,6 +19,12 @@ COPY . /usr/src/app
 
 
 RUN echo "SECRET_KEY = 'django-insecure-_^39%)wfp910i*)2!2+ihrxbnrv$&44nm#pv-yf!7&mqhbgnkz'" > .env
+RUN echo "SECRET_KEY = 'django-insecure-_^39%)wfp910i*)2!2+ihrxbnrv$&44nm#pv-yf!7&mqhbgnkz'" >> .env 
+RUN echo "DB_NAME = 'wickedpark'" >> .env
+RUN echo "DB_USER = 'postgres'" >> .env
+RUN echo "DB_PASSWORD = 'Thomas2018'"  >> .env
+RUN echo "DB_HOST = 'wickedpark.cxvo6tyuitau.eu-west-1.rds.amazonaws.com'" >> .env
+RUN echo "DB_PORT = '5432'" >> .env
 
 
 EXPOSE 8000

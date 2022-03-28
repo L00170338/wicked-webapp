@@ -15,7 +15,7 @@
         <div class="form-group">
         <form method="POST">
             {% csrf_token %}
-            <button class="btn btn-danger" style="padding-left: 48%; padding-right: 52%;">Delete</button>
+            <button class="btn btn-danger" style="padding-left: 48%; padding-right: 52%;" name="delete_button">Delete</button>
         </div>
 {% else %}
     You are not allowed...
