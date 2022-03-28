@@ -69,6 +69,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Exporting secret key
+        run: |
+          echo "SECRET_KEY = '${{ secrets.SECRET_KEY }}'" >> .env
+          echo "DB_NAME = '${{ secrets.DB_NAME_PROD }}'" >> .env
+          echo "DB_USER = '${{ secrets.DB_USERNAME_PROD }}'" >> .env
+          echo "DB_HOST = '${{ secrets.DB_ENDPOINT_PROD }}'" >> .env
+          echo "DB_PORT = '5432'i" >> .env          
+
       - name: Build and push Docker image
         id:  docker_build
         uses: docker/build-push-action@v2
