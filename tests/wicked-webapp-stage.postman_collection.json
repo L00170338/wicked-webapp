@@ -13,7 +13,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Response time is less than 200ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"    pm.expect(pm.response.responseTime).to.be.below(800);",
 							"});",
 							"",
 							"pm.test(\"response is ok\", function () {",
