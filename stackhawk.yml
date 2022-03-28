@@ -10,5 +10,6 @@ app:
     - "/book/.*"
     - "/sitemap.xml"
     - "/robots.txt"
+    - "/*html"
 hawk:
   failureThreshold: HIGH
