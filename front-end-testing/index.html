@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://devopslecturer.github.io/awpgdip2022/front-end-testing/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Front-end-testing - Wicked Adventures</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Front-end-testing";
+        var mkdocs_page_input_path = "front-end-testing.md";
+        var mkdocs_page_url = "/awpgdip2022/front-end-testing/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Wicked Adventures
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../autodoc/">AutoDocs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../back-end-testing/">Back-end-testing</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../code/">Code documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dast/">DAST</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Front-end-testing</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-following-tests-scenarios-are-done-to-confirm-the-project-is-in-a-working-condition">The following tests scenarios are done to confirm the Project is in a working condition:</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../monitoring/">Monitoring</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sast/">SAST</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Wicked Adventures</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Front-end-testing</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="front-end-testing">Front End testing</h1>
+<p>The front end is the client-side section of a program. We can say that it 
+involves everything visible while using an application. Every web application 
+has a three-tier architecture. It includes clients, servers, and information 
+systems or resources. The presentation layer comprises the client. Front end 
+testers test this layer. They perform GUI testing and test usability and how 
+a site or application works.*</p>
+<p>To perform Front End testing on the Project the <a href="https://www.selenium.dev/documentation/">Selenium Webdriver</a> was used.
+The test is performed as part of <code>front-end-testing.yml</code> workflow. During this workflow run a <code>Docker</code> image is generated
+from the Project on push to <code>Dev</code> branch of the repo. Once this part is done, then the python file <code>Front-end-tester.py</code>.</p>
+<h3 id="the-following-tests-scenarios-are-done-to-confirm-the-project-is-in-a-working-condition">The following tests scenarios are done to confirm the Project is in a working condition:</h3>
+<ul>
+<li>The code checks if the Search field presents on the main page of the Web-App</li>
+<li>A text inserted into that field and the search button is pressed.</li>
+<li>The test scrip press to <code>Register</code> button on the main page of the Web-App</li>
+<li>It types in all required values into fields for a new user registration and hits <code>Submit</code></li>
+<li>It logs out from the user account, and tries to login back with the same credentials</li>
+<li>If the test script can find <code>Add profile</code> button, this means the login was successful</li>
+<li>Test has PASSED.</li>
+</ul>
+<p>Part of the test code is demontrated below:</p>
+<pre><code class="language-python">def check_register():
+    '''
+        This function checks if the user can get registered.
+        If it successful, then function 'check_login()' uses
+        same credentials to check if the user can get logged in.
+    '''
+    home_button = driver.find_element(By.CSS_SELECTOR, &quot;.material-icons-outlined&quot;)
+    home_button.click()
+    time.sleep(1)
+
+    register_button = driver.find_element(By.NAME, &quot;base_register_btn&quot;)
+    register_button.click()
+    time.sleep(1)
+
+    username_filed = driver.find_element(By.ID, &quot;username&quot;)
+    username_filed.send_keys(&quot;seleniumtester&quot;)
+    time.sleep(1)
+</code></pre>
+<p><em>Note 1: The first paragraph is taken from</em> <a href="https://www.testim.io/blog/front-end-testing-complete-overview/">here</a></p>
+<p>This page is created by L00169827</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../monitoring/" class="btn btn-neutral float-right" title="Monitoring">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../monitoring/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
